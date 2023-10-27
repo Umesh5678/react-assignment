@@ -5,6 +5,7 @@ import './App.css';
 
 function App() {
 
+  // for getting data from json file
   const url = "http://localhost:3030/data";
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
@@ -22,7 +23,7 @@ function App() {
 
 
  
-
+// for adding data to the cart array
   const addToCart = (product) => {
     setCart([...cart, product]);
     console.log('Product Added to the cart:', product);
@@ -37,6 +38,10 @@ function App() {
     }
     
   };
+
+
+
+  // for removing data from cart array and update it.
 
 
   const removeFromCart = (product) => {
@@ -71,21 +76,20 @@ function App() {
               <div className='row'>
                 {category.productList.map((product , index) =>{
                   return (
-                    <div className='col-4' key={index}>
-                        <div className="card text-start" style={{width: "18rem",border:"1px solid blue"}} >
-                          <div className="card-body ">
-                            <label><strong>Name :</strong></label><span>{product.name}</span><br />
-                            <label><strong>Prize :</strong></label><span>{product.price}.00</span><br />
-                            <div className='buttons text-center mt-3'>
-                            <button className='btn btn-primary mb-3 mt-2 ps-3 pe-3' onClick={() => addToCart(product) } >Add to cart</button><br />
-                            <button className='btn btn-primary ps-3 pe-3' onClick={() => removeFromCart(product)}>remove from cart</button>
+                        <div className='col-4' key={index}>
+                            <div className="card text-start" style={{width: "18rem",border:"1px solid blue"}} >
+                              <div className="card-body ">
+                                <label><strong>Name :</strong></label><span>{product.name}</span><br />
+                                <label><strong>Prize :</strong></label><span>{product.price}.00</span><br />
+                                <div className='buttons text-center mt-3'>
+                                <button className='btn btn-primary mb-3 mt-2 ps-3 pe-3' onClick={() => addToCart(product) } >Add to cart</button><br />
+                                <button className='btn btn-primary ps-3 pe-3' onClick={() => removeFromCart(product)}>remove from cart</button>
+                                </div>
+                              </div>
                             </div>
-                            
-                          </div>
-                      </div>
-                  </div>
-                  )
-                })}
+                        </div>
+                      )
+                    })}
                 
               </div>  
         </div>
