@@ -1,0 +1,12 @@
+command for starting project .
+
+
+1. start json server.
+  
+    npx json-server --watch data.json --port 3030
+
+
+2. run project on server by using start npm.
+
+    npm start
+
